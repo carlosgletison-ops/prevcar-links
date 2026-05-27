@@ -146,13 +146,13 @@ body::before {
 
 .logo-divider {
     width: 1px;
-    height: 42px;
+    height: 36px;
     background: rgba(0, 58, 112, 0.12);
     flex-shrink: 0;
 }
 
 .header-logo {
-    height: 52px;
+    height: 45px;
     max-width: calc(50% - 0.8rem);
     object-fit: contain;
     filter: drop-shadow(0 4px 8px rgba(0, 58, 112, 0.06));
@@ -170,11 +170,11 @@ body::before {
     }
     
     .logo-divider {
-        height: 32px;
+        height: 28px;
     }
     
     .header-logo {
-        height: 40px;
+        height: 35px;
         max-width: calc(50% - 0.6rem);
     }
 }
