@@ -133,20 +133,34 @@ body::before {
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
-.logo-wrapper {
-    width: 160px;
-    height: auto;
+.logos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
     margin-bottom: 1.5rem;
-    filter: drop-shadow(0 4px 8px rgba(0, 58, 112, 0.1));
+    width: 100%;
+    max-width: 320px;
+    padding: 0 0.5rem;
+}
+
+.logo-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(0, 58, 112, 0.12);
+    flex-shrink: 0;
+}
+
+.header-logo {
+    max-height: 48px;
+    max-width: calc(50% - 0.75rem);
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 58, 112, 0.08));
     transition: transform 0.3s ease;
 }
-.logo-wrapper:hover {
+
+.header-logo:hover {
     transform: scale(1.03);
-}
-.logo-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
 }
 
 .brand-title {
@@ -344,6 +358,99 @@ body::before {
     background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
     color: #ffffff;
     border-color: transparent;
+}
+
+/* Services Section */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background: var(--surface-glass);
+    border-radius: var(--radius-md);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 58, 112, 0.2);
+    box-shadow: 0 8px 20px -6px rgba(0, 58, 112, 0.08);
+}
+
+.service-icon-wrapper {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(0, 58, 112, 0.04);
+    border: 1px solid rgba(0, 58, 112, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bosch-blue);
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: var(--bosch-blue);
+    color: #ffffff;
+    border-color: var(--bosch-blue);
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: left;
+}
+
+.service-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.service-desc {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+
+/* Adjust services grid for mobile */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .service-card {
+        padding: 1.1rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .service-icon-wrapper {
+        flex-shrink: 0;
+    }
+    
+    .service-desc {
+        font-size: 0.72rem;
+    }
 }
 
 /* Fleet Portfolio Section */
@@ -594,13 +701,21 @@ body::before {
     gap: 0.65rem;
 }
 
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
 .footer-logo {
-    height: 24px;
-    opacity: 0.4;
+    height: 20px;
+    opacity: 0.5;
+    object-fit: contain;
     transition: opacity 0.3s ease;
 }
-.footer-logo:hover {
-    opacity: 0.8;
+.footer-logos:hover .footer-logo {
+    opacity: 0.85;
 }
 
 .footer-text {
